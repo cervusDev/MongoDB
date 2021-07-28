@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const User = require('../models/user');
+const User = require('../models/user'); 
 const auth = require('../config/auth.json');
 
 const router = express.Router();
@@ -36,6 +36,7 @@ router.post('/register', async (req, res)=> {
   } catch  {
     return res.status(400).send({ error: 'Registration failed'});
   };
+  
 });
 
 router.post('/authenticate', async(req,res) => {
